@@ -1,0 +1,27 @@
+{
+   "name": "chat-example",
+  "version": "1.0.0",
+  "description": "Servidor de push notification para clientes IONIC utilizando NodeJS, MongoDB e uma API externa de cotacaow.",
+  "main": "server.js",
+  "repository": "",
+  "author": "Adrian Lemes <adrianlemess@gmail.com>",
+  "dependencies": {
+    "async": "~0.2.8",
+    "body-parser": "^1.15.1",
+    "config.json": "0.0.4",
+    "cron": "^1.1.0",
+    "deferred": "^0.7.5",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "generate-function": "^2.0.0",
+    "jsonpointer": "^3.0.0",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.15",
+    "path": "^0.12.7",
+    "q": "^1.4.1",
+    "request": "^2.72.0",
+    "rootpath": "^0.1.2",
+    "socket.io": "~0.9.14",
+    "xtend": "^4.0.1"
+  }
+}
