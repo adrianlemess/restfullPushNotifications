@@ -10,6 +10,8 @@ var service = {};
 service.storeAverageDaily = storeAverageDaily;
 service.getLastAverages = getLastAverages;
 service.getAverageDaily = getAverageDaily;
+service.getListAverageDaily = getListAverageDaily;
+
 module.exports = service;
 
 function storeAverageDaily(quotation, callback){
@@ -31,7 +33,16 @@ function storeAverageDaily(quotation, callback){
         
     });
 };
-
+function getListAverageDaily(callback){
+    Average.find().exec(function (err, average){
+       if (err) {
+           callback(err);
+       } 
+       else {
+           callback(average);
+       }
+    });
+}
 
 function getAverageDaily(callback){
 

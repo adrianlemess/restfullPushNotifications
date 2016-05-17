@@ -1,3 +1,5 @@
+//server.js
+
 require('rootpath')();
 var express = require('express');
 var path = require('path');
@@ -27,7 +29,7 @@ app.use(function(req, res, next){
 
 //Timer function
 var cron = require('cron');
-var cronJob = cron.job("*/12 * * * * *", function(){
+var cronJob = cron.job("* */5 * * * *", function(){
     // perform operation e.g. GET request http.get() etc.
     console.log("Timer");
     quotationController.storeQuotation();
@@ -35,7 +37,7 @@ var cronJob = cron.job("*/12 * * * * *", function(){
 cronJob.start();
 
 
-app.use('/api', require('./routes.js'));
+app.use('/api', require('./controllers/routes.js'));
 app.get('/', function(req, res){
     res.send("Hello World");
 });

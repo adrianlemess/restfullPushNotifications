@@ -1,5 +1,5 @@
 {
-   "name": "chat-example",
+  "name": "chat-example",
   "version": "1.0.0",
   "description": "Servidor de push notification para clientes IONIC utilizando NodeJS, MongoDB e uma API externa de cotacaow.",
   "main": "server.js",
@@ -17,6 +17,7 @@
     "jsonpointer": "^3.0.0",
     "method-override": "^2.3.5",
     "mongoose": "^4.4.15",
+    "node-gcm": "^0.14.0",
     "path": "^0.12.7",
     "q": "^1.4.1",
     "request": "^2.72.0",

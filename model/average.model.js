@@ -7,6 +7,6 @@ var averageSchema = new mongoose.Schema({
     average: Number
 });
 
-//Module is created from user's mongoose.model 
+//Module is created from average's mongoose.model 
 var Average = mongoose.model('Average', averageSchema);
 module.exports= Average;

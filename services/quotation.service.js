@@ -10,6 +10,8 @@ var service = {};
 service.getQuotationAPI = getQuotationAPI;
 service.storeQuotation = storeQuotation;
 service.getQuotation = getLastQuotation;
+service.getListQuotations = getListQuotations;
+
 module.exports = service;
 
 
@@ -61,6 +63,16 @@ function getLastQuotation(){
     });
     return deferred.promise;
 }
+function getListQuotations(callback){
+   Quotation.find().limit(10).sort({$natural:-1}).exec(function (err, quotation){
+       if (err) {
+           callback(err);
+       } 
+       else {
+           callback(quotation);
+       }
+    });
+}
 
 //Armzenar média diária
 //Recuperar a maior média do dia e a menor média do dia calcular e depois armazenar
@@ -90,7 +102,7 @@ function storeQuotation(callback) {
             code: quotationApi.code,
             codein: quotationApi.codein,
             high: quotationApi.high,
-            bid: 4,
+            bid: quotationApi.bid,
             low: quotationApi.low,
             create_date: quotationApi.create_date
         });

@@ -1,3 +1,4 @@
+//average.controller.js
 var config = require('config.json');
 var express = require('express');
 var http = require('http');
@@ -17,8 +18,17 @@ module.exports = {
      getAverageDaily: function(req, res, next) {
      
      averageService.getAverageDaily(function(average){
-                console.log("Average: "+average);
+
               res.json({averageDaily: average});
+          }); 
+
+
+    },
+    getListAverageDaily: function(req, res, next) {
+     
+     averageService.getListAverageDaily(function(average){
+                
+              res.send(average);
           }); 
 
 

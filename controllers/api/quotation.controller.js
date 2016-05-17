@@ -1,3 +1,4 @@
+//quotation.controller.js
 var config = require('config.json');
 var express = require('express');
 var http = require('http');
@@ -32,7 +33,11 @@ getQuotation:function (req, res, next) {
             res.status(400).send(err);
         });
 },
-    
+    getListQuotations: function (req, res, next){
+        quotationService.getListQuotations(function(quotations){
+             res.send(quotations);
+        });
+    },
    storeQuotation: function (req, res, next){
 
     
